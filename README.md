@@ -16,10 +16,20 @@ mvn spring-boot:run
 
 ```
 http POST :8081/cats name="몽이" energy=1
+# http POST localhost:8081/cats name="몽이" energy=1
 http GET :8081/cats/1
 http PATCH :8081/cats/1 energy=2
 # http DELETE :8081/cats/1 
 ```
+
+
+```
+http POST :8081/privateaccounts name="개인1" energy=1
+http GET :8081/dogs/1
+http PATCH :8081/dogs/1 energy=2
+# http DELETE :8081/dogs/1 
+```
+
 
 - Pet 에 먹이를 한번 줘봅니다.
 ```

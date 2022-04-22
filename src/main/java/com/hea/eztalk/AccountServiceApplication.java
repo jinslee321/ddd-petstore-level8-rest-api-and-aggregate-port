@@ -22,22 +22,37 @@ import org.springframework.web.bind.annotation.RestController;
 public class AccountServiceApplication {
 
 	public static ApplicationContext applicationContext;
+	// public static void main(String[] args) {
+
+	// 	Pet pet = new Dog();
+
+	// 	System.out.println("energy is " + pet.getEnergy());
+
+	// 	pet.eat();
+	// 	System.out.println("energy is " + pet.getEnergy());
+
+	// 	pet.sleep();
+	// 	System.out.println("energy is " + pet.getEnergy());
+
+	// 	applicationContext = SpringApplication.run(AccountServiceApplication.class, args);
+	// }
+
+
+// To-Do
 	public static void main(String[] args) {
 
-		Pet pet = new Dog();
+		Account act = new PrivateAccount();
 
-		System.out.println("energy is " + pet.getEnergy());
+		System.out.println("energy is " + act.getEnergy());
 
-		pet.eat();
-		System.out.println("energy is " + pet.getEnergy());
+		act.eat();
+		System.out.println("energy is " + act.getEnergy());
 
-		pet.sleep();
-		System.out.println("energy is " + pet.getEnergy());
+		act.sleep();
+		System.out.println("energy is " + act.getEnergy());
 
 		applicationContext = SpringApplication.run(AccountServiceApplication.class, args);
 	}
-
-
 	
 
 
