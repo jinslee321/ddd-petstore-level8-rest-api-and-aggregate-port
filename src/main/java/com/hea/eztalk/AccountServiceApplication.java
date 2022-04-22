@@ -1,7 +1,8 @@
-package com.example.petstore;
+package com.hea.eztalk;
 
 
-import com.example.petstore.domain.*;
+//import com.example.petstore.domain.*;
+import com.hea.eztalk.domain.*;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-public class PetApplication {
+public class AccountServiceApplication {
 
 	public static ApplicationContext applicationContext;
 	public static void main(String[] args) {
@@ -33,7 +34,7 @@ public class PetApplication {
 		pet.sleep();
 		System.out.println("energy is " + pet.getEnergy());
 
-		applicationContext = SpringApplication.run(PetApplication.class, args);
+		applicationContext = SpringApplication.run(AccountServiceApplication.class, args);
 	}
 
 
@@ -41,18 +42,18 @@ public class PetApplication {
 
 
 	@Autowired
-	PetRepository petRepository;
+	AccountServiceRepository accountServiceRepository;
 
 
 
 	@RequestMapping(method = RequestMethod.PUT, path="pets/{petId}/feed")
 	public String feed(@PathVariable(value = "petId") Long petId){
 
-		Pet thePet = petRepository.findById(petId).get();
+		Pet thePet = accountServiceRepository.findById(petId).get();
 
 		thePet.eat();
 
-		petRepository.save(thePet);
+		accountServiceRepository.save(thePet);
 
 		return "맛있는 거 먹였습니다.";
 	}
@@ -60,11 +61,11 @@ public class PetApplication {
 
 	@RequestMapping(method = RequestMethod.PUT, path="pets/{petId}/groom")
 	public String groom(@PathVariable(value = "petId") Long petId){
-		Pet thePet = petRepository.findById(petId).get();
+		Pet thePet = accountServiceRepository.findById(petId).get();
 
 		if(thePet instanceof Groomable){
 			String message = ((Groomable)thePet).grooming();
-			petRepository.save(thePet);
+			accountServiceRepository.save(thePet);
 			return message;
 		}
 

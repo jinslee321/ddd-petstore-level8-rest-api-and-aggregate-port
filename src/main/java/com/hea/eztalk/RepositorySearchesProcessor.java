@@ -1,7 +1,8 @@
-package com.example.petstore;
+package com.hea.eztalk;
 
-import com.example.petstore.domain.Cat;
-import com.example.petstore.domain.Pet;
+// import com.example.petstore.domain.Pet;
+import com.hea.eztalk.domain.Pet;
+import com.hea.eztalk.domain.Cat;
 
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.Link;

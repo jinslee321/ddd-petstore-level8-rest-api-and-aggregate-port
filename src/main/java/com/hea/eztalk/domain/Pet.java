@@ -1,4 +1,4 @@
-package com.example.petstore.domain;
+package com.hea.eztalk.domain;
 
 import javax.persistence.*;
 
